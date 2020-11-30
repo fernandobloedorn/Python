@@ -1,2 +1,4 @@
 df_all = pd.merge(df_sales, df_store, how = 'inner', on = 'Store')
 sales_df = sales_df[['Date', 'Sales']].rename(columns = {'Date': 'ds', 'Sales': 'y'})
+df_prediction.tail(60).to_csv('out.csv')
+
