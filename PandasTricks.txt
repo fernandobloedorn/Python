@@ -3,5 +3,7 @@ sales_df = sales_df[['Date', 'Sales']].rename(columns = {'Date': 'ds', 'Sales': 
 df_prediction.tail(60).to_csv('out.csv')
 df = pd.read_csv('alexa.csv', sep = '\t') // Por tabulação
 df.isnull().sum()
+users.describe(include=[np.object])
+https://colab.research.google.com/github/google/eng-edu/blob/master/ml/recommendation-systems/recommendation-systems.ipynb?utm_source=ss-recommendation-systems&utm_campaign=colab-external&utm_medium=referral&utm_content=recommendation-systems#scrollTo=z8wxFfV8o4tR
 
 
