@@ -2,8 +2,21 @@ df_all = pd.merge(df_sales, df_store, how = 'inner', on = 'Store')
 sales_df = sales_df[['Date', 'Sales']].rename(columns = {'Date': 'ds', 'Sales': 'y'})
 df_prediction.tail(60).to_csv('out.csv')
 df = pd.read_csv('alexa.csv', sep = '\t') // Por tabulação
+sns.heatmap(df.isnull(), cbar=False)
 df.isnull().sum()
 users.describe(include=[np.object])
 https://colab.research.google.com/github/google/eng-edu/blob/master/ml/recommendation-systems/recommendation-systems.ipynb?utm_source=ss-recommendation-systems&utm_campaign=colab-external&utm_medium=referral&utm_content=recommendation-systems#scrollTo=z8wxFfV8o4tR
+df.hist(bins = 30, figsize(13,5), color = 'r')
+df['length'] = df['reviews'].aplly(len) // número de caracteres em reviews
+
+// Geracao de nuvem de palavras
+sentences = reviews_df['verified_reviews'].tolist()
+len(sentences)
+print(sentences[0:10])
+sentences_as_one_string = ' '.join(sentences)
+len(sentences_as_one_string)
+from wordcloud import WordCloud
+plt.figure(figsize=(20,20))
+plt.imshow(WordCloud().generate(sentences_as_one_string));
 
 
