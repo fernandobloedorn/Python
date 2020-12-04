@@ -1,0 +1,17 @@
+
+# Ponctuation remove
+import string
+string.punctuation
+test = 'Fun item to play with and get used to using. Sometimes has hard time answering the questions you ask, but I think it will be better!'
+test_punc_removed = [char for char in test if char not in string.punctuation]
+test_punc_removed = ''.join(test_punc_removed)
+test_punc_removed
+
+# Stop words remove
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+print(stopwords.words('english'))
+test_punc_stop_removed = [word for word in test_punc_removed.split() if word.lower() not in stopwords.words('english')]
+print(test_punc_stop_removed)
+
